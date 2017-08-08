@@ -44,7 +44,7 @@ open class QRCodeViewController: UIViewController{
         self.view.addSubview(cameraView)
         
         //初始化捕捉设备（AVCaptureDevice），类型AVMdeiaTypeVideo
-        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
         
         let input :AVCaptureDeviceInput
         
@@ -54,7 +54,7 @@ open class QRCodeViewController: UIViewController{
         //捕捉异常
         do{
             //创建输入流
-            input = try AVCaptureDeviceInput(device: captureDevice)
+            input = try AVCaptureDeviceInput(device: captureDevice!)
             
             //把输入流添加到会话
             captureSession.addInput(input)
@@ -70,21 +70,26 @@ open class QRCodeViewController: UIViewController{
         
         //设置输出流的代理
         output.setMetadataObjectsDelegate(self, queue: dispatchQueue)
-        
+        let ar=NSArray()
+        ar.adding(AVMetadataObject.ObjectType.qr)
+        ar.adding(AVMetadataObject.ObjectType.ean13)
+        ar.adding(AVMetadataObject.ObjectType.ean8)
+        ar.adding(AVMetadataObject.ObjectType.code128)
         //设置输出媒体的数据类型
-        output.metadataObjectTypes = NSArray(array: [AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code]) as [AnyObject]
+        output.metadataObjectTypes = ar as! [AVMetadataObject.ObjectType]// NSArray(array: [AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code])
+       
         
         //创建预览图层
         let videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         
         //设置预览图层的填充方式
-        videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         
         //设置预览图层的frame
-        videoPreviewLayer?.frame = cameraView.bounds
+        videoPreviewLayer.frame = cameraView.bounds
         
         //将预览图层添加到预览视图上
-        cameraView.layer.insertSublayer(videoPreviewLayer!, at: 0)
+        cameraView.layer.insertSublayer(videoPreviewLayer, at: 0)
         
         // 1.获取屏幕的frame
         let viewRect = self.view.frame
@@ -119,7 +124,7 @@ open class QRCodeViewController: UIViewController{
     
     
     //从相册中选择图片
-    func selectPhotoFormPhotoLibrary(_ sender : AnyObject){
+    @objc func selectPhotoFormPhotoLibrary(_ sender : AnyObject){
         let picture = UIImagePickerController()
         picture.sourceType = UIImagePickerControllerSourceType.photoLibrary
         picture.delegate = self
@@ -173,7 +178,7 @@ extension QRCodeViewController:AVCaptureMetadataOutputObjectsDelegate{
             DispatchQueue.main.async(execute: {
                 
                 if((self.returnScanResult != nil)){
-                    self.returnScanResult!(metaData.stringValue)
+                    self.returnScanResult!(metaData.stringValue!)
 
                 }
                 if(self.navigationController != nil){

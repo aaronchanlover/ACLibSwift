@@ -92,7 +92,7 @@ class QRCodeScanBackgroundView: UIView {
     
     
     //让扫描线滚动
-    func moveScannerLayer(_ timer : Timer) {
+    @objc func moveScannerLayer(_ timer : Timer) {
         scanLine.frame = CGRect(x: 0, y: 0, width: self.barcodeView.frame.size.width, height: 12);
         UIView.animate(withDuration: 2) {
             self.scanLine.frame = CGRect(x: self.scanLine.frame.origin.x, y: self.scanLine.frame.origin.y + self.barcodeView.frame.size.height - 10, width: self.scanLine.frame.size.width, height: self.scanLine.frame.size.height);

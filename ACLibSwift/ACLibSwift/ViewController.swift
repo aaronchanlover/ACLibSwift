@@ -72,5 +72,13 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(tbc, animated: true)
         
     }
+    
+    @IBAction func pageviewButtonDidClick(_ sender: Any) {
+        
+        let pageviewController = ACPageViewController()
+        
+        navigationController?.pushViewController(pageviewController, animated: true)
+    }
+    
 }
 

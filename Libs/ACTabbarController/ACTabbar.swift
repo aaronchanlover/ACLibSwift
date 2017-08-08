@@ -260,7 +260,7 @@ internal extension ACTabBar /* Actions */ {
         self.setNeedsLayout()
     }
     
-    internal func highlightAction(_ sender: AnyObject?) {
+    @objc internal func highlightAction(_ sender: AnyObject?) {
         guard let container = sender as? ACTabBarItemContainer else {
             return
         }
@@ -280,7 +280,7 @@ internal extension ACTabBar /* Actions */ {
         }
     }
     
-    internal func dehighlightAction(_ sender: AnyObject?) {
+    @objc internal func dehighlightAction(_ sender: AnyObject?) {
         guard let container = sender as? ACTabBarItemContainer else {
             return
         }
@@ -300,7 +300,7 @@ internal extension ACTabBar /* Actions */ {
         }
     }
     
-    internal func selectAction(_ sender: AnyObject?) {
+    @objc internal func selectAction(_ sender: AnyObject?) {
         guard let container = sender as? ACTabBarItemContainer else {
             return
         }

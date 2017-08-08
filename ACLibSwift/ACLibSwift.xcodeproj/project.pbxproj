@@ -35,6 +35,12 @@
 		5B0CA5391E7A2CD10057E5CA /* ExampleIrregularityContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0CA5301E7A2CD10057E5CA /* ExampleIrregularityContentView.swift */; };
 		5B0CA53A1E7A2CD10057E5CA /* TabbarExample2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0CA5311E7A2CD10057E5CA /* TabbarExample2ViewController.swift */; };
 		5B0CA53B1E7A2CD10057E5CA /* TabbarExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0CA5321E7A2CD10057E5CA /* TabbarExampleViewController.swift */; };
+		5B1D0A731EE418EF0042E295 /* ACPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D0A721EE418EF0042E295 /* ACPageViewController.swift */; };
+		5B1F3FCC1ECD3E1200D1508A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1F3FCB1ECD3E1200D1508A /* UIColor.swift */; };
+		5B52B7F81EDAE0BE001FED1D /* ACPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B52B7F71EDAE0BE001FED1D /* ACPageView.swift */; };
+		5B52B7FA1EDAE0D4001FED1D /* ACPageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B52B7F91EDAE0D4001FED1D /* ACPageStyle.swift */; };
+		5B52B7FC1EDAE0ED001FED1D /* ACTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B52B7FB1EDAE0ED001FED1D /* ACTitleView.swift */; };
+		5B52B7FE1EDAE10F001FED1D /* ACContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B52B7FD1EDAE10F001FED1D /* ACContentView.swift */; };
 		711ED8AD36A36666EBA16C26 /* Pods_ACLibSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB423911E5A68E6BDDD83AC9 /* Pods_ACLibSwiftTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,8 +86,8 @@
 		5B0CA5161E7A2C700057E5CA /* ACTabBarItemContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACTabBarItemContentView.swift; sourceTree = "<group>"; };
 		5B0CA5171E7A2C700057E5CA /* ACTabBarItemMoreContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACTabBarItemMoreContentView.swift; sourceTree = "<group>"; };
 		5B0CA5191E7A2C700057E5CA /* QRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QRCode.bundle; sourceTree = "<group>"; };
-		5B0CA51B1E7A2C700057E5CA /* QRCodeScanBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScanBackgroundView.swift; sourceTree = "<group>"; };
-		5B0CA51C1E7A2C700057E5CA /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		5B0CA51B1E7A2C700057E5CA /* QRCodeScanBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCodeScanBackgroundView.swift; path = QRCodeImage/QRCodeScanBackgroundView.swift; sourceTree = "<group>"; };
+		5B0CA51C1E7A2C700057E5CA /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCodeViewController.swift; path = QRCodeImage/QRCodeViewController.swift; sourceTree = "<group>"; };
 		5B0CA52A1E7A2CD10057E5CA /* ExampleAnimateTipsContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleAnimateTipsContentView.swift; sourceTree = "<group>"; };
 		5B0CA52B1E7A2CD10057E5CA /* ExampleBackgroundContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBackgroundContentView.swift; sourceTree = "<group>"; };
 		5B0CA52C1E7A2CD10057E5CA /* ExampleBasicContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBasicContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +97,12 @@
 		5B0CA5301E7A2CD10057E5CA /* ExampleIrregularityContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleIrregularityContentView.swift; sourceTree = "<group>"; };
 		5B0CA5311E7A2CD10057E5CA /* TabbarExample2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarExample2ViewController.swift; sourceTree = "<group>"; };
 		5B0CA5321E7A2CD10057E5CA /* TabbarExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarExampleViewController.swift; sourceTree = "<group>"; };
+		5B1D0A721EE418EF0042E295 /* ACPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACPageViewController.swift; sourceTree = "<group>"; };
+		5B1F3FCB1ECD3E1200D1508A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		5B52B7F71EDAE0BE001FED1D /* ACPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACPageView.swift; sourceTree = "<group>"; };
+		5B52B7F91EDAE0D4001FED1D /* ACPageStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACPageStyle.swift; sourceTree = "<group>"; };
+		5B52B7FB1EDAE0ED001FED1D /* ACTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACTitleView.swift; sourceTree = "<group>"; };
+		5B52B7FD1EDAE10F001FED1D /* ACContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACContentView.swift; sourceTree = "<group>"; };
 		630FF0959BE07BD06F55728C /* Pods-ACLibSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACLibSwiftUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACLibSwiftUITests/Pods-ACLibSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
 		67C8BC268C54518A44A93E17 /* Pods_ACLibSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ACLibSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		880FD51254FA8874B9877A84 /* Pods-ACLibSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACLibSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACLibSwift/Pods-ACLibSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +174,7 @@
 		5B0CA4C61E7A2A790057E5CA /* ACLibSwift */ = {
 			isa = PBXGroup;
 			children = (
+				5B1D0A711EE418DF0042E295 /* Demo */,
 				5B0CA5271E7A2CD10057E5CA /* Classes */,
 				5B0CA50F1E7A2C700057E5CA /* Libs */,
 				5B0CA4C71E7A2A790057E5CA /* AppDelegate.swift */,
@@ -195,6 +208,8 @@
 		5B0CA50F1E7A2C700057E5CA /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				5B52B7F61EDAE0AB001FED1D /* ACPageView */,
+				5B1F3FCA1ECD3CE500D1508A /* ACUtils */,
 				5B0CA5101E7A2C700057E5CA /* ACTabbarController */,
 				5B0CA5181E7A2C700057E5CA /* QRCode */,
 			);
@@ -219,19 +234,11 @@
 		5B0CA5181E7A2C700057E5CA /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
-				5B0CA5191E7A2C700057E5CA /* QRCode.bundle */,
-				5B0CA51A1E7A2C700057E5CA /* QRCodeImage */,
-			);
-			path = QRCode;
-			sourceTree = "<group>";
-		};
-		5B0CA51A1E7A2C700057E5CA /* QRCodeImage */ = {
-			isa = PBXGroup;
-			children = (
 				5B0CA51B1E7A2C700057E5CA /* QRCodeScanBackgroundView.swift */,
 				5B0CA51C1E7A2C700057E5CA /* QRCodeViewController.swift */,
+				5B0CA5191E7A2C700057E5CA /* QRCode.bundle */,
 			);
-			path = QRCodeImage;
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 		5B0CA5271E7A2CD10057E5CA /* Classes */ = {
@@ -264,6 +271,33 @@
 				5B0CA52F1E7A2CD10057E5CA /* ExampleTipsContentView.swift */,
 			);
 			path = Content;
+			sourceTree = "<group>";
+		};
+		5B1D0A711EE418DF0042E295 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				5B1D0A721EE418EF0042E295 /* ACPageViewController.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		5B1F3FCA1ECD3CE500D1508A /* ACUtils */ = {
+			isa = PBXGroup;
+			children = (
+				5B1F3FCB1ECD3E1200D1508A /* UIColor.swift */,
+			);
+			path = ACUtils;
+			sourceTree = "<group>";
+		};
+		5B52B7F61EDAE0AB001FED1D /* ACPageView */ = {
+			isa = PBXGroup;
+			children = (
+				5B52B7F71EDAE0BE001FED1D /* ACPageView.swift */,
+				5B52B7F91EDAE0D4001FED1D /* ACPageStyle.swift */,
+				5B52B7FB1EDAE0ED001FED1D /* ACTitleView.swift */,
+				5B52B7FD1EDAE10F001FED1D /* ACContentView.swift */,
+			);
+			path = ACPageView;
 			sourceTree = "<group>";
 		};
 		9E6AA1D13375D7B9EAA9CB35 /* Pods */ = {
@@ -356,15 +390,19 @@
 				TargetAttributes = {
 					5B0CA4C31E7A2A790057E5CA = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = L3YB6DV93Z;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					5B0CA4D71E7A2A790057E5CA = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5B0CA4C31E7A2A790057E5CA;
 					};
 					5B0CA4E21E7A2A7A0057E5CA = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5B0CA4C31E7A2A790057E5CA;
 					};
@@ -461,7 +499,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		785A1AE3411E2579A007B49E /* [CP] Check Pods Manifest.lock */ = {
@@ -476,7 +514,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7F8B501CB3B8CD4C32C99213 /* [CP] Check Pods Manifest.lock */ = {
@@ -491,7 +529,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		947849477AACEF24B9B97D4A /* [CP] Copy Pods Resources */ = {
@@ -562,14 +600,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B0CA5391E7A2CD10057E5CA /* ExampleIrregularityContentView.swift in Sources */,
+				5B1F3FCC1ECD3E1200D1508A /* UIColor.swift in Sources */,
 				5B0CA5351E7A2CD10057E5CA /* ExampleBasicContentView.swift in Sources */,
+				5B52B7FA1EDAE0D4001FED1D /* ACPageStyle.swift in Sources */,
 				5B0CA5231E7A2C700057E5CA /* ACTabBarItemMoreContentView.swift in Sources */,
 				5B0CA5381E7A2CD10057E5CA /* ExampleTipsContentView.swift in Sources */,
 				5B0CA53A1E7A2CD10057E5CA /* TabbarExample2ViewController.swift in Sources */,
+				5B1D0A731EE418EF0042E295 /* ACPageViewController.swift in Sources */,
 				5B0CA5211E7A2C700057E5CA /* ACTabBarItemContainer.swift in Sources */,
 				5B0CA5261E7A2C700057E5CA /* QRCodeViewController.swift in Sources */,
 				5B0CA5361E7A2CD10057E5CA /* ExampleBouncesContentView.swift in Sources */,
+				5B52B7F81EDAE0BE001FED1D /* ACPageView.swift in Sources */,
 				5B0CA4CA1E7A2A790057E5CA /* ViewController.swift in Sources */,
+				5B52B7FE1EDAE10F001FED1D /* ACContentView.swift in Sources */,
 				5B0CA4C81E7A2A790057E5CA /* AppDelegate.swift in Sources */,
 				5B0CA51D1E7A2C700057E5CA /* ACTabbar.swift in Sources */,
 				5B0CA51E1E7A2C700057E5CA /* ACTabBarController.swift in Sources */,
@@ -579,6 +622,7 @@
 				5B0CA5341E7A2CD10057E5CA /* ExampleBackgroundContentView.swift in Sources */,
 				5B0CA51F1E7A2C700057E5CA /* ACTabBarItem.swift in Sources */,
 				5B0CA53B1E7A2CD10057E5CA /* TabbarExampleViewController.swift in Sources */,
+				5B52B7FC1EDAE0ED001FED1D /* ACTitleView.swift in Sources */,
 				5B0CA5371E7A2CD10057E5CA /* ExampleHighlightableContentView.swift in Sources */,
 				5B0CA5201E7A2C700057E5CA /* ACTabBarItemBadgeView.swift in Sources */,
 			);
@@ -733,12 +777,14 @@
 			baseConfigurationReference = 2455BDF603254716A0937A5E /* Pods-ACLibSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L3YB6DV93Z;
 				INFOPLIST_FILE = ACLibSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ac.ACLibSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -747,12 +793,14 @@
 			baseConfigurationReference = 880FD51254FA8874B9877A84 /* Pods-ACLibSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L3YB6DV93Z;
 				INFOPLIST_FILE = ACLibSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ac.ACLibSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -766,7 +814,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ac.ACLibSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ACLibSwift.app/ACLibSwift";
 			};
 			name = Debug;
@@ -781,7 +830,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ac.ACLibSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ACLibSwift.app/ACLibSwift";
 			};
 			name = Release;
@@ -795,7 +845,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ac.ACLibSwiftUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = ACLibSwift;
 			};
 			name = Debug;
@@ -809,7 +860,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ac.ACLibSwiftUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = ACLibSwift;
 			};
 			name = Release;
