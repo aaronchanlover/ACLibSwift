@@ -35,7 +35,13 @@ class ACTitleView: UIView {
     }()
     
     //标题底线
-    
+    private lazy var bottomLine : UIView = {
+        let bottomLine = UIView()
+        bottomLine.backgroundColor = self.style.bottomLineColor
+        bottomLine.frame.size.height = self.style.bottomLineHeight
+        bottomLine.frame.origin.y=self.bounds.height-self.style.bottomLineHeight
+        return bottomLine
+    }()
     
     init(frame : CGRect, titles : [String], style : ACPageStyle) {
         self.titles = titles
@@ -147,7 +153,15 @@ extension ACTitleView{
     }
     
     fileprivate func setupBottomLine(){
-    
+        // 1.判断是否需要显示底部线段
+        guard style.isShowBottomLine else { return }
+        
+        // 2.将bottomLine添加到titleView中
+        scrollView.addSubview(bottomLine)
+        
+        // 3.设置frame
+        bottomLine.frame.origin.x = titleLabels.first!.frame.origin.x
+        bottomLine.frame.size.width = titleLabels.first!.bounds.width
     }
     
     fileprivate func setupCoverView(){
@@ -175,7 +189,15 @@ extension ACTitleView{
         //调整内容的位置
         adjustPosition(newLabel)
         
-        // 2.通知内容view改变当前的位置
+        // 调整BottomLine
+        if style.isShowBottomLine {
+            UIView.animate(withDuration: 0.5, animations: {[weak self] in
+                self?.bottomLine.frame.origin.x = newLabel.frame.origin.x
+                self?.bottomLine.frame.size.width = newLabel.frame.width
+            })
+        }
+        
+        // 通知内容view改变当前的位置
         delegate?.titleView(self, didSelected: currentIndex)
         
         
@@ -266,14 +288,21 @@ extension ACTitleView : ACContentViewDelegate{
         let targetLabel = titleLabels[targetIndex]
         let sourceLabel = titleLabels[currentIndex]
         
-        // 2、颜色渐变
+        // 2、标题颜色渐变
+        //获取两个颜色的RGB差值
         let deltaRGB = UIColor.getRGBDelta(style.selectedColor,style.normalColor)
         let selectedRGB = style.selectedColor.getRGB()
         let normalRGB = style.normalColor.getRGB()
         targetLabel.textColor = UIColor(r: normalRGB.0 + deltaRGB.0 * progress, g: normalRGB.1 + deltaRGB.1 * progress, b: normalRGB.2 + deltaRGB.2 * progress)
-        
         sourceLabel.textColor = UIColor(r: selectedRGB.0 - deltaRGB.0 * progress, g: selectedRGB.1 - deltaRGB.1 * progress, b: selectedRGB.2 - deltaRGB.2 * progress)
         
+        // 渐变BottomLine
+        if style.isShowBottomLine {
+            let deltaX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+            let deltaW = targetLabel.frame.width - sourceLabel.frame.width
+            bottomLine.frame.origin.x = sourceLabel.frame.origin.x + deltaX * progress
+            bottomLine.frame.size.width = sourceLabel.frame.width + deltaW * progress
+        }
     }
     
     

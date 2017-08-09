@@ -28,7 +28,7 @@ class ACPageViewController: UIViewController {
         style.titleViewHeight = 44
         style.isScrollEnable = true
         //        style.isTitleScale = true
-        
+        style.isShowBottomLine=true
         style.isShowCoverView = true
         
         // 4.初始化所有的子控制器

@@ -109,9 +109,12 @@ extension ACContentView : UICollectionViewDataSource{
 //MARK:- UICollectionViewDelegate代理实现
 extension ACContentView : UICollectionViewDelegate{
     
-    //减速停止的时候开始执行
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-            collectionViewEndScroll()
+     /// 开始拖拽
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        // 记住拖动起始位置
+        isForbidDelegate = false
+        scrollStartContentOffsetX = scrollView.contentOffset.x
+    
     }
     
     //停止拖拽的时候开始执行
@@ -121,34 +124,21 @@ extension ACContentView : UICollectionViewDelegate{
         }
     }
     
-    private func collectionViewEndScroll() {
-        // 1.获取结束时，对应的indexPath
-        let endIndex = Int(collectionView.contentOffset.x / collectionView.bounds.width)
-        
-        // 2.通知titleView改变下标
-        delegate?.contentView(self, endScroll: endIndex)
-    }
-
-    
-    /// 开始拖拽
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        // 记住拖动起始位置
-        isForbidDelegate = false
-        scrollStartContentOffsetX = scrollView.contentOffset.x
-    
+    //减速的时候开始执行
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+            collectionViewEndScroll()
     }
     
+    //scrollview滚动事件，不管滑动或调用滑到对应的item都会调用此方法
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        guard scrollStartContentOffsetX != scrollView.contentOffset.x || isForbidDelegate else{
-            return
-        }
+        //如果没有偏移或禁止delegate的则不需要操作
+        if scrollView.contentOffset.x == scrollStartContentOffsetX || isForbidDelegate { return }
         
         //1. 定义targetIndex/progress
         //targetIndex指的是内容view的index
         var targetIndex = 0
         var progress : CGFloat = 0.0
-        
         
         //2. 给targetIndex/progress赋值
         //拖拽的起点x除以屏幕的宽度及可获得偏移的页数，即当前页（第一页从0开始）
@@ -178,6 +168,16 @@ extension ACContentView : UICollectionViewDelegate{
         delegate?.contentView(self, targetIndex: targetIndex, progress: progress)
         
     }
+    
+    //自定义事件
+    private func collectionViewEndScroll() {
+        // 1.获取结束时，对应的indexPath
+        let endIndex = Int(collectionView.contentOffset.x / collectionView.bounds.width)
+        
+        // 2.通知titleView改变下标
+        delegate?.contentView(self, endScroll: endIndex)
+    }
+
 }
 
 
@@ -185,9 +185,11 @@ extension ACContentView : UICollectionViewDelegate{
 extension ACContentView : ACTitleViewDelegate{
 
     func titleView(_ titleView: ACTitleView, didSelected currentIndex: Int) {
+        //禁止代理：只需要将ContentView转到对应的页面
         isForbidDelegate = true
         
         let indexPath = IndexPath(item: currentIndex, section: 0)
+        //滚动到对应的item,调用此方法会同时调用delegate:scrollViewDidScroll
         collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
     }
 }

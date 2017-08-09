@@ -44,7 +44,7 @@ extension ACPageView{
         let titleViewFrame = CGRect(x: 0, y: 0, width: bounds.width, height: titleStyle.titleViewHeight)
         let titleView = ACTitleView(frame: titleViewFrame, titles: titles, style : titleStyle)
         addSubview(titleView)
-        titleView.backgroundColor = UIColor.randomColor()
+        titleView.backgroundColor = titleStyle.titleViewBackground
         
         // 2.添加contentView到pageView中
         let contentViewFrame = CGRect(x: 0, y: titleView.frame.maxY, width: bounds.width, height: frame.height - titleViewFrame.height)
