@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'ACLibSwift'
-s.version          = '0.1.1'
+s.version          = '0.2.0'
 s.summary          = 'ACLibSwift.'
 
 # This description is used to generate tags and improve search results.
@@ -34,9 +34,16 @@ s.subspec 'QRCode' do |ss|
 ss.source_files = 'Libs/QRCode/**/*'
 end
 
-
 s.subspec 'ACTabbarController' do |ss|
 ss.source_files = 'Libs/ACTabbarController/**/*'
+end
+
+s.subspec 'ACPageView' do |ss|
+ss.source_files = 'Libs/ACPageView/**/*'
+end
+
+s.subspec 'ACUtils' do |ss|
+ss.source_files = 'Libs/ACUtils/**/*'
 end
 
 
