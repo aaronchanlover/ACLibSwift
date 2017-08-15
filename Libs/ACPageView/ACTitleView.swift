@@ -43,6 +43,13 @@ class ACTitleView: UIView {
         return bottomLine
     }()
     
+    private lazy var coverView : UIView = {
+        let cView = UIView()
+        cView.backgroundColor=self.style.coverBgColor
+        cView.alpha=self.style.coverAlpha
+        return cView
+    }()
+    
     init(frame : CGRect, titles : [String], style : ACPageStyle) {
         self.titles = titles
         self.style = style
@@ -165,7 +172,22 @@ extension ACTitleView{
     }
     
     fileprivate func setupCoverView(){
-    
+        guard style.isShowCoverView else {return}
+        
+        //添加coverView
+        scrollView.addSubview(coverView)
+        
+        // 3.设置frame
+        var coverW : CGFloat = titleLabels.first!.frame.width - 2 * style.coverMargin
+        if style.isScrollEnable {
+            coverW = titleLabels.first!.frame.width + style.titleMargin * 0.5
+        }
+        let coverH : CGFloat = style.coverHeight
+        coverView.bounds = CGRect(x: 0, y: 0, width: coverW, height: coverH)
+        coverView.center = titleLabels.first!.center
+        
+        coverView.layer.cornerRadius = style.coverHeight * 0.5
+        coverView.layer.masksToBounds = true
     }
 }
 
@@ -200,41 +222,18 @@ extension ACTitleView{
         // 通知内容view改变当前的位置
         delegate?.titleView(self, didSelected: currentIndex)
         
-        
-//        // 0.取出点击的Label
-//        guard let newLabel = tapGes.view as? UILabel else { return }
-//
-//        // 1.改变自身的titleLabel的颜色
-//        let oldLabel = titleLabels[currentIndex]
-//        oldLabel.textColor = style.normalColor
-//        newLabel.textColor = style.selectColor
-//        currentIndex = newLabel.tag
-//
-//        // 2.通知内容View改变当前的位置
-//        delegate?.titleView(self, didSelected: currentIndex)
-//
-//        // 3.调整BottomLine
-//        if style.isShowBottomLine {
-//            bottomLine.frame.origin.x = newLabel.frame.origin.x
-//            bottomLine.frame.size.width = newLabel.frame.width
-//        }
-//
-//        // 4.调整缩放比例
-//        if style.isTitleScale {
-//            newLabel.transform = oldLabel.transform
-//            oldLabel.transform = CGAffineTransform.identity
-//        }
-//
-//        // 5.调整位置
-//        adjustPosition(newLabel)
-//
-//        // 6.调整coverView的位置
-//        if style.isShowCoverView {
-//            let coverW = style.isScrollEnable ? (newLabel.frame.width + style.titleMargin) : (newLabel.frame.width - 2 * style.coverMargin)
-//            coverView.frame.size.width = coverW
-//            coverView.center = newLabel.center
-//        }
+        // 调整缩放比例
+        if style.isTitleScale {
+            newLabel.transform = oldLabel.transform
+            oldLabel.transform = CGAffineTransform.identity
+        }
 
+        //调整coverView的位置
+        if style.isShowCoverView {
+            let coverW = style.isScrollEnable ? (newLabel.frame.width + style.titleMargin) : (newLabel.frame.width - 2 * style.coverMargin)
+            coverView.frame.size.width = coverW
+            coverView.center = newLabel.center
+        }
     }
 }
 
@@ -303,6 +302,24 @@ extension ACTitleView : ACContentViewDelegate{
             bottomLine.frame.origin.x = sourceLabel.frame.origin.x + deltaX * progress
             bottomLine.frame.size.width = sourceLabel.frame.width + deltaW * progress
         }
+        
+        // 调整缩放
+        if style.isTitleScale {
+            let deltaScale = style.scaleRange - 1.0
+            sourceLabel.transform = CGAffineTransform(scaleX: style.scaleRange - deltaScale * progress, y: style.scaleRange - deltaScale * progress)
+            targetLabel.transform = CGAffineTransform(scaleX: 1.0 + deltaScale * progress, y: 1.0 + deltaScale * progress)
+        }
+
+        //调整coverView
+        if style.isShowCoverView {
+            let oldW = style.isScrollEnable ? (sourceLabel.frame.width + style.titleMargin) : (sourceLabel.frame.width - 2 * style.coverMargin)
+            let newW = style.isScrollEnable ? (targetLabel.frame.width + style.titleMargin) : (targetLabel.frame.width - 2 * style.coverMargin)
+            let deltaW = newW - oldW
+            let deltaX = targetLabel.center.x - sourceLabel.center.x
+            coverView.frame.size.width = oldW + deltaW * progress
+            coverView.center.x = sourceLabel.center.x + deltaX * progress
+        }
+
     }
     
     

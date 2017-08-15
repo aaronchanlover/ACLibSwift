@@ -30,6 +30,7 @@ class ACPageViewController: UIViewController {
         //        style.isTitleScale = true
         style.isShowBottomLine=true
         style.isShowCoverView = true
+        style.isTitleScale=true
         
         // 4.初始化所有的子控制器
         var childVcs = [UIViewController]()
