@@ -40,6 +40,7 @@ end
 
 s.subspec 'ACPageView' do |ss|
 ss.source_files = 'Libs/ACPageView/**/*'
+ss.source_files = 'Libs/ACUtils/**/*'
 end
 
 s.subspec 'ACUtils' do |ss|
