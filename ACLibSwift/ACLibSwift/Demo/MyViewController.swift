@@ -1,18 +1,19 @@
 //
-//  TabbarExample2ViewController.swift
-//  AaronLibsForiOS
+//  MyViewController.swift
+//  ACLibSwift
 //
-//  Created by 陈军 on 2017/3/15.
-//  Copyright © 2017年 aaron. All rights reserved.
+//  Created by 陈军 on 2017/11/12.
+//  Copyright © 2017年 AaronChan. All rights reserved.
 //
 
 import UIKit
 
-class TabbarExample2ViewController: UIViewController {
+class MyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let v=MyView.loadFromMainNib()
+        view.addSubview(v)
         // Do any additional setup after loading the view.
     }
 
